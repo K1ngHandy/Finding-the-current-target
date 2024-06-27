@@ -27,7 +27,13 @@
     elements.forEach(element => {
       element.addEventListener('click', event => {
         // ENTER YOUR CODE HERE
-      })
+        const {className, nodeName} = event.currentTarget;
+
+        console.log(`The ${className} element is a ${nodeName}`);
+        if (event.currentTarget === document.querySelector('section')) {
+          console.log(`This is Section ${className}`);
+        }
+      }, {capture: true})
     })
 
     /*
